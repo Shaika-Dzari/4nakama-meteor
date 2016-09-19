@@ -18,6 +18,7 @@ export default class Header extends Component {
                             <li><Link to="/project" activeClassName="active">Projets</Link></li>
                             <li><Link to="/about" activeClassName="active">À Propos</Link></li>
                             <li><Link to="/login" activeClassName="active">Connexion</Link></li>
+                            <li><Link to="/admin" activeClassName="active">Administration</Link></li>
                         </ul>
                     </nav>
                 </div>
