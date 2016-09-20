@@ -8,7 +8,7 @@ const BlogPostTable = (blogposts) => {
         var gourl = '/admin/blog/' + v.id;
 
         return (
-            <tr>
+            <tr key={v._id}>
                 <td><Link to={gourl}>{v.title}</Link></td>
                 <td>{pub}</td>
             </tr>
