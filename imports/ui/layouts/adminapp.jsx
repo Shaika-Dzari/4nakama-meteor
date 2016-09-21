@@ -45,8 +45,8 @@ const AdminApp = ({children}) => {
 
 
     return (
-        <div>   
-           
+        <div>
+
             <div className="box bluebox">
                 <p>Hello</p>
             </div>
@@ -88,7 +88,7 @@ class AdminApp extends React.Component {
     componentWillMount() {
         // Check that the user is logged in before the component mounts
         if (!this.getMeteorData().isAuthenticated) {
-            this.props.router.push('/login')
+            this.props.router.push('/login');
         }
     }
 
@@ -96,14 +96,14 @@ class AdminApp extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         // Now check that they are still logged in. Redirect to sign in page if they aren't.
         if (!getMeteorData().isAuthenticated) {
-            this.props.router.push('/login')
+            this.props.router.push('/login');
         }
     }
 
     render() {
 
         return (
-            <div>   
+            <div>
                 <div className="box bluebox">
                     <div className="heading">Hello</div>
                     <div className="body">

@@ -1,10 +1,23 @@
 import React from 'react';
-import BlogPostTable from '../../components/blogPostTable/blogPostTable.jsx';
-import CategoryList from '../../components/categoryList/categoryList.jsx';
+import BlogPostTable from '../../../components/blogPostTable/blogPostTable.jsx';
+import CategoryList from '../../../components/categoryList/categoryList.jsx';
 
 export default class AdminBlogPage extends React.Component {
 
     render () {
+
+        var b = [
+                {
+                    _id: 1,
+                    title: 'Hello World',
+                    text: 'Welcome to my blog',
+                    author: 'Rguillemette',
+                    createdAt: new Date(),
+                    categories: [{_id: 1, name: 'Blog'}],
+                    tags: ['blog', 'divers']
+                }
+            ];
+
         return (
             <div className="row">
                 <div className="col-8">
@@ -13,7 +26,7 @@ export default class AdminBlogPage extends React.Component {
                             <h3>Blog</h3>
                         </div>
                         <div className="body">
-                            <BlogPostTable blogposts={} />
+                            <BlogPostTable blogposts={b} />
                         </div>
                         <div className="footer">
                             pagination...

@@ -13,40 +13,32 @@ export default class LoginForm extends Component {
         event.preventDefault();
 
         var self = this;
-        console.log("login(event)");
         var u = this.state.username;
         var p = this.state.passwd;
 
         Meteor.loginWithPassword(u, p, function(err) {
-            console.log(err);
-
             if (err) {
-                self.setState({loginErrMsg: err.reason});
-                self.props.onLoginError(err);
                 console.log("ERROR", err.reason);
+                self.setState({loginErrMsg: err.reason});
             } else {
-                console.log("Success", Meteor.user());
+                self.props.loginCallback();
             }
         });
     }
 
     handleUserNameChange(event) {
-        console.log("handleUserNameChange(event)");
         this.setState({
             username : event.target.value
         });
     }
 
     handlePasswordChange(event) {
-        console.log("handlePasswordChange(event)");
         this.setState({
             passwd : event.target.value
         });
     }
 
     render() {
-        console.log('render');
-        
         var msg = this.state.loginErrMsg;
         var alertBox = msg ? <AlertBox message={msg} /> : '';
 
@@ -69,32 +61,7 @@ export default class LoginForm extends Component {
     }
 }
 
-/*
-
-
-export default class LoginForm extends Component {
-
-    submit() {
-        console.log('submit');
-
-    }
-
-    render() {
-
-        return (
-            <div className="box">
-                <div className="body">
-                    <form className="frm">
-                        <label htmlFor="username">Nom d'utilisateur</label>
-                        <input type="text" id="username" />
-                        <label htmlFor="passwd">Nom d'utilisateur</label>
-                        <input type="password" id="passwd" />
-                        <button className="btn btnblue" onClick={this.submit.bind(this)}>Connexion</button>
-                    </form>
-                </div>
-            </div>
-        );
-    }
-}
-*/
+LoginForm.propTypes = {
+    loginCallback: React.PropTypes.func.isRequired
+};
 

@@ -35,14 +35,3 @@ Meteor.startup(() => {
         document.getElementById('app')
     );
 });
-
-/**
- * 
-      <Route path="/admin" component={ AdminApp }>
-        <IndexRoute component={AdminBlogPage} />
-        <Route path="/admin" component={ AdminBlogPage } />
-        <Route path="/admin/blog" component={ AdminBlogPage } />
-        <Route path="/admin/file" component={ AdminBlogPage } />
-      </Route>
- * 
- */
