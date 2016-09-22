@@ -104,13 +104,6 @@ class AdminApp extends React.Component {
 
         return (
             <div>
-                <div className="box bluebox">
-                    <div className="heading">Hello</div>
-                    <div className="body">
-                        <p>world!</p>
-
-                    </div>
-                </div>
                 {this.props.children}
             </div>
         );

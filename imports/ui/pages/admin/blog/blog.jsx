@@ -6,7 +6,9 @@ export default class AdminBlogPage extends React.Component {
 
     render () {
 
-        var b = [
+        var args = {
+
+            blogposts: [
                 {
                     _id: 1,
                     title: 'Hello World',
@@ -16,7 +18,7 @@ export default class AdminBlogPage extends React.Component {
                     categories: [{_id: 1, name: 'Blog'}],
                     tags: ['blog', 'divers']
                 }
-            ];
+            ]};
 
         return (
             <div className="row">
@@ -26,7 +28,7 @@ export default class AdminBlogPage extends React.Component {
                             <h3>Blog</h3>
                         </div>
                         <div className="body">
-                            <BlogPostTable blogposts={b} />
+                            <BlogPostTable {...args} />
                         </div>
                         <div className="footer">
                             pagination...

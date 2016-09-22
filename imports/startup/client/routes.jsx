@@ -13,7 +13,7 @@ import LoginPage from '../../ui/pages/login/login.jsx';
 import AdminPage from '../../ui/pages/admin/admin.jsx';
 import AdminBlogPage from '../../ui/pages/admin/blog/blog.jsx';
 import AdminFilePage from '../../ui/pages/admin/file/file.jsx';
-
+import BlogEditor from '../../ui/components/blogEditor/blogEditor.jsx';
 
 
 Meteor.startup(() => {
@@ -28,6 +28,7 @@ Meteor.startup(() => {
                     <IndexRoute component={ AdminPage } />
                     <Route path="blog" component={ AdminBlogPage } />
                     <Route path="file" component={ AdminFilePage } />
+                    <Route path="blog/:id" component={ BlogEditor } />
                 </Route>
                 <Route path="*" component={ NotFound } />
             </Route>

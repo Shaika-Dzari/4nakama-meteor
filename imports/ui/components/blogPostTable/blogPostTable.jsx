@@ -1,11 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-const BlogPostTable = (blogposts) => {
+const BlogPostTable = (args) => {
 
-    var blogpostsTrs = blogposts.map((v, idx) => {
+    console.log(args);
+
+    var blogpostsTrs = args.blogposts.map((v, idx) => {
         var pub = v.published = 1 ? 'Publié' : 'Non-Publié';
-        var gourl = '/admin/blog/' + v.id;
+        var gourl = '/admin/blog/' + v._id;
 
         return (
             <tr key={v._id}>
